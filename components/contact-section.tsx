@@ -14,9 +14,9 @@ export default function ContactSection() {
           <span className="text-golden neon-text">Get In Touch</span>
         </h2>
         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Let's team up and create games.</p>
-        <div className="flex flex-wrap gap-4 justify-center items-center">
+        <div className="flex flex-wrap gap-4 justify-center items-center relative z-20">
           <Button
-            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black w-auto flex-shrink-0"
+            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30"
             asChild
           >
             <Link href="mailto:reardenr@gmail.com" className="flex items-center">
@@ -25,7 +25,7 @@ export default function ContactSection() {
             </Link>
           </Button>
           <Button
-            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black w-auto flex-shrink-0"
+            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30"
             asChild
           >
             <Link href="https://t.me/MrRowboto" target="_blank" rel="noopener noreferrer" className="flex items-center">
@@ -40,7 +40,7 @@ export default function ContactSection() {
             </Link>
           </Button>
           <Button
-            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black w-auto flex-shrink-0"
+            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30"
             asChild
           >
             <Link
@@ -60,7 +60,7 @@ export default function ContactSection() {
             </Link>
           </Button>
           <Button
-            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black w-auto flex-shrink-0"
+            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30"
             asChild
           >
             <Link
@@ -74,7 +74,7 @@ export default function ContactSection() {
             </Link>
           </Button>
           <Button
-            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black w-auto flex-shrink-0"
+            className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30"
             asChild
           >
             <Link
