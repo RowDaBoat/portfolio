@@ -14,13 +14,13 @@ export default function ContactSection() {
         </h2>
         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Let&apos;s team up and create games.</p>
         <div className="flex flex-wrap gap-4 justify-center items-center relative z-20">
-          <Link
+          <a
             href="mailto:reardenr@gmail.com"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Mail className="w-5 h-5 mr-2" />
             Email
-          </Link>
+          </a>
           <Link
             href="https://t.me/MrRowboto"
             target="_blank"
