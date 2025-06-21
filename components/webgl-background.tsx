@@ -58,6 +58,7 @@ export default function WebGLBackground() {
     const gl = glContext
     const canvas = canvasRef.current
     if (!canvas) return
+    return
 
     gl.clearColor(0, 0, 0, 0)
     gl.clear(gl.COLOR_BUFFER_BIT)
