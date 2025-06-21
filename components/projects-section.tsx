@@ -126,10 +126,10 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
           )}
           {project.demo && (
             <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+              <a href={project.demo} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Demo
-              </Link>
+              </a>
             </Button>
           )}
         </div>
