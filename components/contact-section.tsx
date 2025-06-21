@@ -16,7 +16,7 @@ export default function ContactSection() {
         <div className="flex flex-wrap gap-4 justify-center items-center relative z-20">
           <Link
             href="mailto:reardenr@gmail.com"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:text-golden w-auto flex-shrink-0 relative z-30 h-10"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Mail className="w-5 h-5 mr-2" />
             Email
@@ -25,7 +25,7 @@ export default function ContactSection() {
             href="https://t.me/MrRowboto"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:text-golden w-auto flex-shrink-0 relative z-30 h-10"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Image
               src={getAssetPath("/telegram-logo.svg") || "/placeholder.svg"}
@@ -40,7 +40,7 @@ export default function ContactSection() {
             href="https://njump.me/row@alephia.tech"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:text-golden w-auto flex-shrink-0 relative z-30 h-10"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Image
               src={getAssetPath("/nostrich-logo.png") || "/placeholder.svg"}
@@ -55,7 +55,7 @@ export default function ContactSection() {
             href="https://linkedin.com/in/rowdaboat"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:text-golden w-auto flex-shrink-0 relative z-30 h-10"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Linkedin className="w-5 h-5 mr-2" />
             LinkedIn
@@ -64,7 +64,7 @@ export default function ContactSection() {
             href="https://github.com/RowDaBoat"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:text-golden w-auto flex-shrink-0 relative z-30 h-10"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden border-2 border-golden text-black font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-golden hover:text-black w-auto flex-shrink-0 relative z-30 h-10"
           >
             <Github className="w-5 h-5 mr-2" />
             GitHub
