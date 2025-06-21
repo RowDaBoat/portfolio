@@ -74,13 +74,13 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
             </div>
           </div>
         )}
-        <div className="flex gap-3 mt-auto">
+        <div className="flex gap-3 mt-auto flex-wrap">
           {project.video && (
             <Link
               href={project.video}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <Play className="w-4 h-4 mr-2" />
               Video
@@ -91,7 +91,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.pouet}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <Globe className="w-4 h-4 mr-2" />
               pouet.net
@@ -102,7 +102,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.itch}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <Gamepad2 className="w-4 h-4 mr-2" />
               itch.io
@@ -113,7 +113,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.android}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <Smartphone className="w-4 h-4 mr-2" />
               Android
@@ -124,7 +124,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <Github className="w-4 h-4 mr-2" />
               Code
@@ -135,7 +135,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.assetStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <ShoppingCart className="w-4 h-4 mr-2" />
               Asset Store
@@ -146,7 +146,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Demo
@@ -201,7 +201,7 @@ export default function ProjectsSection({ projectCategories }: ProjectsSectionPr
             <h3 className="text-3xl font-bold text-golden neon-text tracking-wide">Bitcoin & Nostr</h3>
           </div>
           <p className="text-gray-400 mb-8 text-lg">
-            Pet projects setting up Bitcoin infrastructure and harnessing Nostr's power.
+            Pet projects setting up Bitcoin infrastructure and harnessing Nostr&apos;s power.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectCategories.bitcoinNostr.map((project, index) => (
