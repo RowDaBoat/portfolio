@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { getAssetPath } from "@/lib/utils"
 
 export default function ContactSection() {
   return (
@@ -22,13 +23,13 @@ export default function ContactSection() {
           </Button>
           <Button className="bg-golden hover:bg-[#FFD700] text-black font-semibold px-6 py-3 neon-button" asChild>
             <Link href="https://t.me/MrRowboto" target="_blank" rel="noopener noreferrer">
-              <Image src="/telegram-logo.svg" alt="Telegram" className="w-5 h-5 mr-2 filter brightness-0" />
+              <Image src={getAssetPath("/telegram-logo.svg")} alt="Telegram" className="w-5 h-5 mr-2 filter brightness-0" />
               Telegram
             </Link>
           </Button>
           <Button className="bg-golden hover:bg-[#FFD700] text-black font-semibold px-6 py-3 neon-button" asChild>
             <Link href="https://njump.me/row@alephia.tech" target="_blank" rel="noopener noreferrer">
-              <Image src="/nostrich-logo.png" alt="Nostrich" className="w-9 h-6 mr-2 filter brightness-0" />
+              <Image src={getAssetPath("/nostrich-logo.png")} alt="Nostrich" className="w-9 h-6 mr-2 filter brightness-0" />
               Nostr
             </Link>
           </Button>

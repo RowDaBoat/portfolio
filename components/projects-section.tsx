@@ -7,6 +7,7 @@ import { Github, ExternalLink, Gamepad2, Wrench, Bitcoin, Play, Globe, Smartphon
 import Link from "next/link"
 import Image from "next/image"
 import type { Project, ProjectCategories } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 interface ProjectsSectionProps {
   projectCategories: ProjectCategories
@@ -26,7 +27,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
 
     return (
       <Image
-        src={project.image || "/placeholder.svg"}
+        src={getAssetPath(project.image || "/placeholder.svg")}
         alt={project.title}
         width={300}
         height={200}

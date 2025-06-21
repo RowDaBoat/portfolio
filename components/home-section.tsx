@@ -7,6 +7,7 @@ import { ChevronDown } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import type { ProjectGroup } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 interface HomeSectionProps {
   projectGroups: ProjectGroup[]
@@ -40,7 +41,7 @@ export default function HomeSection({ projectGroups }: HomeSectionProps) {
               <div className="mb-6 lg:mb-8">
                 <div className="w-24 h-24 lg:w-32 lg:h-32 mb-4 lg:mb-6 rounded-full border-2 border-golden neon-border overflow-hidden mx-auto lg:mx-0">
                   <Image
-                    src="/avatar.png"
+                    src={getAssetPath("/avatar.png")}
                     alt="Row - Software Engineer & Game Developer"
                     width={128}
                     height={128}
