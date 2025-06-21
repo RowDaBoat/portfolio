@@ -34,16 +34,14 @@ jobs:
 
       - name: Get pnpm store directory
         shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          restore-keys: ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
@@ -51,19 +49,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
-          static_site_generator: next
+          static_site_generator: static
 
-      - name: Build with Next.js
+      - name: Build static site
         run: pnpm build
-
-      - name: Debug - List files
-        run: |
-          echo "Current directory contents:"
-          ls -la
-          echo "Looking for output directory:"
-          find . -name "out" -type d 2>/dev/null || echo "No 'out' directory found"
-          echo "Looking for .next directory:"
-          find . -name ".next" -type d 2>/dev/null || echo "No '.next' directory found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
