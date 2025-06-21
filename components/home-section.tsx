@@ -41,7 +41,7 @@ export default function HomeSection({ projectGroups }: HomeSectionProps) {
               <div className="mb-6 lg:mb-8">
                 <div className="w-24 h-24 lg:w-32 lg:h-32 mb-4 lg:mb-6 rounded-full border-2 border-golden neon-border overflow-hidden mx-auto lg:mx-0">
                   <Image
-                    src={getAssetPath("/avatar.png")}
+                    src={getAssetPath("/avatar.png") || "/placeholder.svg"}
                     alt="Row - Software Engineer & Game Developer"
                     width={128}
                     height={128}
@@ -60,9 +60,9 @@ export default function HomeSection({ projectGroups }: HomeSectionProps) {
                 <br />
                 Lead teams, build, publish, iterate.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16 lg:mb-0">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16 lg:mb-0 sm:flex-wrap">
                 <Button
-                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black"
+                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black flex-shrink-0"
                   onClick={() => {
                     const element = document.querySelector("#projects")
                     if (element) {
@@ -78,7 +78,7 @@ export default function HomeSection({ projectGroups }: HomeSectionProps) {
                   Projects
                 </Button>
                 <Button
-                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black"
+                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black flex-shrink-0"
                   onClick={() => {
                     const element = document.querySelector("#skills")
                     if (element) {
@@ -94,7 +94,7 @@ export default function HomeSection({ projectGroups }: HomeSectionProps) {
                   Skills
                 </Button>
                 <Button
-                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black"
+                  className="bg-transparent border-2 border-golden text-golden font-semibold px-6 lg:px-8 py-3 neon-button hover:bg-[#FFD700] hover:bg-golden hover:text-black flex-shrink-0"
                   onClick={() => {
                     const element = document.querySelector("#contact")
                     if (element) {
