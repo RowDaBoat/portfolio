@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
 
 export default function WebGLBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const [program, setProgram] = useState<WebGLProgram | null>(null)
   const [glContext, setGlContext] = useState<WebGLRenderingContext | null>(null)
   const [positionAttributeLocation, setPositionAttributeLocation] = useState<number | null>(null)
@@ -150,6 +150,7 @@ void main()
     const programLocal = createProgram(gl, vertexShader, fragmentShader)
     if (!programLocal) return
 
+    gl.useProgram(programLocal)
     setProgram(programLocal)
     setPositionAttributeLocation(gl.getAttribLocation(programLocal, "a_position"))
     setTimeUniformLocation(gl.getUniformLocation(programLocal, "u_time"))
@@ -173,6 +174,18 @@ void main()
       window.removeEventListener("resize", resize)
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
+      }
+      if (programLocal) {
+        gl.deleteProgram(programLocal)
+      }
+      if (vertexShader) {
+        gl.deleteShader(vertexShader)
+      }
+      if (fragmentShader) {
+        gl.deleteShader(fragmentShader)
+      }
+      if (positionBufferLocal) {
+        gl.deleteBuffer(positionBufferLocal)
       }
     }
   }, [createProgram, createShader])
