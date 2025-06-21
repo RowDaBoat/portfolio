@@ -162,9 +162,12 @@ void main()
     setPositionBuffer(positionBufferLocal)
 
     function resize() {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      gl.viewport(0, 0, canvas.width, canvas.height)
+      const currentCanvas = canvasRef.current
+      if (!currentCanvas) return
+
+      currentCanvas.width = window.innerWidth
+      currentCanvas.height = window.innerHeight
+      gl.viewport(0, 0, currentCanvas.width, currentCanvas.height)
     }
 
     resize()
@@ -174,18 +177,6 @@ void main()
       window.removeEventListener("resize", resize)
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
-      }
-      if (programLocal) {
-        gl.deleteProgram(programLocal)
-      }
-      if (vertexShader) {
-        gl.deleteShader(vertexShader)
-      }
-      if (fragmentShader) {
-        gl.deleteShader(fragmentShader)
-      }
-      if (positionBufferLocal) {
-        gl.deleteBuffer(positionBufferLocal)
       }
     }
   }, [createProgram, createShader])
