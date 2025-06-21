@@ -2,7 +2,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Github, ExternalLink, Gamepad2, Wrench, Bitcoin, Play, Globe, Smartphone, ShoppingCart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -77,60 +76,81 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
         )}
         <div className="flex gap-3 mt-auto">
           {project.video && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.video} target="_blank" rel="noopener noreferrer">
-                <Play className="w-4 h-4 mr-2" />
-                Video
-              </Link>
-            </Button>
+            <Link
+              href={project.video}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <Play className="w-4 h-4 mr-2" />
+              Video
+            </Link>
           )}
           {project.pouet && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.pouet} target="_blank" rel="noopener noreferrer">
-                <Globe className="w-4 h-4 mr-2" />
-                pouet.net
-              </Link>
-            </Button>
+            <Link
+              href={project.pouet}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <Globe className="w-4 h-4 mr-2" />
+              pouet.net
+            </Link>
           )}
           {project.itch && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.itch} target="_blank" rel="noopener noreferrer">
-                <Gamepad2 className="w-4 h-4 mr-2" />
-                itch.io
-              </Link>
-            </Button>
+            <Link
+              href={project.itch}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <Gamepad2 className="w-4 h-4 mr-2" />
+              itch.io
+            </Link>
           )}
           {project.android && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.android} target="_blank" rel="noopener noreferrer">
-                <Smartphone className="w-4 h-4 mr-2" />
-                Android
-              </Link>
-            </Button>
+            <Link
+              href={project.android}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <Smartphone className="w-4 h-4 mr-2" />
+              Android
+            </Link>
           )}
           {project.github && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-2" />
-                Code
-              </Link>
-            </Button>
+            <Link
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              Code
+            </Link>
           )}
           {project.assetStore && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <Link href={project.assetStore} target="_blank" rel="noopener noreferrer">
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Asset Store
-              </Link>
-            </Button>
+            <Link
+              href={project.assetStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              Asset Store
+            </Link>
           )}
           {project.demo && (
-            <Button size="sm" className="bg-golden hover:bg-[#FFD700] text-black" asChild>
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Demo
-              </a>
-            </Button>
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Demo
+            </a>
           )}
         </div>
       </CardContent>
