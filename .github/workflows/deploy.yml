@@ -56,6 +56,15 @@ jobs:
       - name: Build with Next.js
         run: pnpm build
 
+      - name: Debug - List files
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo "Looking for output directory:"
+          find . -name "out" -type d 2>/dev/null || echo "No 'out' directory found"
+          echo "Looking for .next directory:"
+          find . -name ".next" -type d 2>/dev/null || echo "No '.next' directory found"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
