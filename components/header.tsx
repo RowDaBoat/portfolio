@@ -1,9 +1,21 @@
 "use client"
 
-import { Gamepad2, Wrench, Bitcoin } from "lucide-react"
+import { Gamepad2, Wrench, Bitcoin, ChevronUp } from "lucide-react"
 import Link from "next/link"
 
 export default function Header() {
+  const scrollToHome = () => {
+    const element = document.querySelector("#home")
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - 100 // Account for fixed header
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 w-full bg-black/80 backdrop-blur-sm border-b border-golden/20 z-50">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -56,76 +68,73 @@ export default function Header() {
           />
         </div>
 
-        {/* Right side - Navigation links */}
-        <div className="hidden md:flex space-x-8">
-          <Link
-            href="#home"
-            className="hover:text-golden transition-colors font-mono"
-            onClick={() => {
-              const element = document.querySelector("#home")
-              if (element) {
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - 100 // Account for fixed header
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            href="#projects"
-            className="hover:text-golden transition-colors font-mono"
-            onClick={() => {
-              const element = document.querySelector("#projects")
-              if (element) {
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - 100 // Account for fixed header
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            Projects
-          </Link>
-          <Link
-            href="#skills"
-            className="hover:text-golden transition-colors font-mono"
-            onClick={() => {
-              const element = document.querySelector("#skills")
-              if (element) {
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - 100 // Account for fixed header
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            Skills
-          </Link>
-          <Link
-            href="#contact"
-            className="hover:text-golden transition-colors font-mono"
-            onClick={() => {
-              const element = document.querySelector("#contact")
-              if (element) {
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - 100 // Account for fixed header
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            Contact
-          </Link>
+        {/* Right side - Navigation links (desktop) and home arrow (mobile) */}
+        <div className="flex items-center">
+          {/* Desktop navigation */}
+          <div className="hidden md:flex space-x-8">
+            <Link href="#home" className="hover:text-golden transition-colors font-mono" onClick={scrollToHome}>
+              Home
+            </Link>
+            <Link
+              href="#projects"
+              className="hover:text-golden transition-colors font-mono"
+              onClick={() => {
+                const element = document.querySelector("#projects")
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - 100 // Account for fixed header
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+            >
+              Projects
+            </Link>
+            <Link
+              href="#skills"
+              className="hover:text-golden transition-colors font-mono"
+              onClick={() => {
+                const element = document.querySelector("#skills")
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - 100 // Account for fixed header
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+            >
+              Skills
+            </Link>
+            <Link
+              href="#contact"
+              className="hover:text-golden transition-colors font-mono"
+              onClick={() => {
+                const element = document.querySelector("#contact")
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - 100 // Account for fixed header
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Mobile home arrow */}
+          <div className="md:hidden">
+            <ChevronUp
+              className="w-6 h-6 text-white cursor-pointer hover:text-golden transition-colors duration-300"
+              onClick={scrollToHome}
+            />
+          </div>
         </div>
       </nav>
     </header>
