@@ -163,12 +163,12 @@ export default function WebGLBackground() {
     setPositionBuffer(positionBufferLocal)
 
     function resize() {
-      const currentCanvas = canvasRef.current
-      if (!currentCanvas) return
+      const canvas = canvasRef.current
+      if (!canvas) return
 
-      currentCanvas.width = window.innerWidth
-      currentCanvas.height = window.innerHeight
-      gl?.viewport(0, 0, currentCanvas.width, currentCanvas.height)
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      gl?.viewport(0, 0, canvas.width, canvas.height)
     }
 
     resize()
