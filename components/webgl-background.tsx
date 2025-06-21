@@ -88,59 +88,60 @@ export default function WebGLBackground() {
       }
     `
 
-    const fragmentShaderSource = `#version 300 es
-precision highp float;
+    const fragmentShaderSource =
+       `#version 300 es
+        precision highp float;
 
-uniform float u_time;
-uniform vec2 u_resolution;
+        uniform float u_time;
+        uniform vec2 u_resolution;
 
-out vec4 out_color;
+        out vec4 out_color;
 
-float wave(
-    in float time,
-    in float height,
-    in float amplitude,
-    in float frequency,
-    in float phase
-)
-{
-    return height + amplitude * sin(time * frequency + phase);
-}
+        float wave(
+            in float time,
+            in float height,
+            in float amplitude,
+            in float frequency,
+            in float phase
+        )
+        {
+            return height + amplitude * sin(time * frequency + phase);
+        }
 
-float comeAndGo(float amplitude, float frequency)
-{
-    float time = u_time * frequency;
-    return amplitude * cos(time) * sin(time);
-}
+        float comeAndGo(float amplitude, float frequency)
+        {
+            float time = u_time * frequency;
+            return amplitude * cos(time) * sin(time);
+        }
 
-float falloff(float height, float limit, float base, float multiplier)
-{
-    return max(0., (base - multiplier * sqrt(abs(height - limit))));
-}
+        float falloff(float height, float limit, float base, float multiplier)
+        {
+            return max(0., (base - multiplier * sqrt(abs(height - limit))));
+        }
 
-void main()
-{
-    vec2 p = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
-    vec4 color = vec4(1., .7, .0, 0.);
-    float waves[3] = float[] (
-        wave(comeAndGo(15., .0625), -0.25, .125, 1.,    p.x),
-        wave(comeAndGo(15., .1),    -0.15, .25,  1.25,  p.x),
-        wave(comeAndGo(15., .0625), -0.5 , .125, 1.125, p.x)
-    );
+        void main()
+        {
+            vec2 p = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
+            vec4 color = vec4(1., .7, .0, 0.);
+            float waves[3] = float[] (
+                wave(comeAndGo(15., .0625), -0.25, .125, 1.,    p.x),
+                wave(comeAndGo(15., .1),    -0.15, .25,  1.25,  p.x),
+                wave(comeAndGo(15., .0625), -0.5 , .125, 1.125, p.x)
+            );
 
-    out_color = vec4(0, 0, 0, 1);
+            out_color = vec4(0, 0, 0, 1);
 
-    for (int i = 0; i < 3; i++)
-    {
-        if (p.y > waves[i])
-            out_color += color * falloff(p.y, waves[i], .5, 1.125);
-        if (p.y < waves[i])
-            out_color += color * falloff(p.y, waves[i], .5, 5.);
-    }
+            for (int i = 0; i < 3; i++)
+            {
+                if (p.y > waves[i])
+                    out_color += color * falloff(p.y, waves[i], .5, 1.125);
+                if (p.y < waves[i])
+                    out_color += color * falloff(p.y, waves[i], .5, 5.);
+            }
 
-    out_color *= .5;
-}
-`
+            out_color *= .5;
+        }
+        `
 
     const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource)
     const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource)
@@ -167,7 +168,7 @@ void main()
 
       currentCanvas.width = window.innerWidth
       currentCanvas.height = window.innerHeight
-      gl.viewport(0, 0, currentCanvas.width, currentCanvas.height)
+      gl?.viewport(0, 0, currentCanvas.width, currentCanvas.height)
     }
 
     resize()
