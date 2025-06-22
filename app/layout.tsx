@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   generator: "v0.dev",
   themeColor: "#000000",
   icons: {
-    icon: "/icon.png",
+    icon: "/portfolio/icon.png",
   },
 }
 
