@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/portfolio/icon.png",
   },
+  other: {
+    "theme-color": "#000000",
+    "msapplication-TileColor": "#000000",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
 }
 
 export default function RootLayout({
@@ -19,6 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#000000" />
+      </head>
       <body>{children}</body>
     </html>
   )
