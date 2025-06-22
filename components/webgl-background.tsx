@@ -110,8 +110,7 @@ export default function WebGLBackground() {
 
         float comeAndGo(float amplitude, float frequency)
         {
-            float time = u_time * frequency;
-            return amplitude * cos(time) * sin(time);
+            return amplitude * sin(u_time * frequency);
         }
 
         float falloff(float height, float limit, float base, float multiplier)
@@ -124,9 +123,9 @@ export default function WebGLBackground() {
             vec2 p = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
             vec4 color = vec4(1., .7, .0, 0.);
             float waves[3] = float[] (
-                wave(comeAndGo(15., .0625), -0.25, .125, 1.,    p.x),
-                wave(comeAndGo(15., .1),    -0.15, .25,  1.25,  p.x),
-                wave(comeAndGo(15., .0625), -0.5 , .125, 1.125, p.x)
+                wave(comeAndGo(7.5, .125), -0.25, .125, 1.,    p.x),
+                wave(comeAndGo(7.5, .2),   -0.15, .25,  1.25,  p.x),
+                wave(comeAndGo(7.5, .125), -0.5 , .125, 1.125, p.x)
             );
 
             out_color = vec4(0, 0, 0, 1);
