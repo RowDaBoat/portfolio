@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Projects, skills, and contact info.",
   generator: "v0.dev",
   themeColor: "#000000",
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export default function RootLayout({
