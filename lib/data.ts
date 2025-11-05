@@ -131,7 +131,7 @@ export const projectCategories: ProjectCategories = {
   ],
   bitcoinNostr: [
     {
-      title: "nodrop.btc",
+      title: "bond",
       description:
         "Bond is \"Bitcoin Ordinals Nostr Domains\", it resolves .btc domains inscribed as Ordinals on Bitcoin to IPs posted in Nostr notes.",
       image: "TEXT:bond 🔗",
