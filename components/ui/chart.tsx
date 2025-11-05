@@ -104,8 +104,17 @@ const ChartTooltip = RechartsPrimitive.Tooltip
 
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  Omit<React.ComponentProps<typeof RechartsPrimitive.Tooltip>, "content"> &
     React.ComponentProps<"div"> & {
+      active?: boolean
+      payload?: Array<{
+        name?: string
+        value?: number | string
+        dataKey?: string
+        color?: string
+        payload?: Record<string, unknown> & { fill?: string }
+      }>
+      label?: string | number
       hideLabel?: boolean
       hideIndicator?: boolean
       indicator?: "line" | "dot" | "dashed"
@@ -188,7 +197,7 @@ const ChartTooltipContent = React.forwardRef<
           {payload.map((item, index) => {
             const key = `${nameKey || item.name || item.dataKey || "value"}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
-            const indicatorColor = color || item.payload.fill || item.color
+            const indicatorColor = color || (item.payload && typeof item.payload === 'object' && 'fill' in item.payload ? item.payload.fill : undefined) || item.color
 
             return (
               <div
@@ -199,7 +208,7 @@ const ChartTooltipContent = React.forwardRef<
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
-                  formatter(item.value, item.name, item, index, item.payload)
+                  formatter(item.value, item.name, item, index, item.payload as any)
                 ) : (
                   <>
                     {itemConfig?.icon ? (
@@ -260,8 +269,13 @@ const ChartLegend = RechartsPrimitive.Legend
 
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+  React.ComponentProps<"div"> & {
+      payload?: Array<{
+        value?: string | number
+        dataKey?: string
+        color?: string
+      }>
+      verticalAlign?: "top" | "bottom"
       hideIcon?: boolean
       nameKey?: string
     }
