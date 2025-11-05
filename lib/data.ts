@@ -36,6 +36,15 @@ export interface ProjectGroup {
 export const projectCategories: ProjectCategories = {
   games: [
     {
+      title: "Shapeshifter",
+      description:
+        "Winning PC Demo entry for the Flashparty 2025. Written in Nim on top of the a rewritten version of Vexel.",
+      image: "/shapeshifter.jpg",
+      tags: ["Nim", "Vexel", "SDF"],
+      video: "https://www.youtube.com/watch?v=pHt7dqqidyw",
+      pouet: "https://www.pouet.net/prod.php?which=105192",
+    },
+    {
       title: "Man In The Vox",
       description:
         "Winning PC Demo entry for the Flashparty 2024. Written in Kotlin on top of Vexel, my own game engine.",
@@ -121,6 +130,15 @@ export const projectCategories: ProjectCategories = {
     },
   ],
   bitcoinNostr: [
+    {
+      title: "nodrop.btc",
+      description:
+        "Bond is \"Bitcoin Ordinals Nostr Domains\", it resolves .btc domains inscribed as Ordinals on Bitcoin to IPs posted in Nostr notes.",
+      image: "TEXT:bond 🔗",
+      tags: ["Bitcoin", "Ordinals", "Nostr", "DNS", "Docker"],
+      github: "https://github.com/RowDaBoat/bond",
+      license: "Open Source, ISC",
+    },
     {
       title: "nodrop.btc",
       description:
