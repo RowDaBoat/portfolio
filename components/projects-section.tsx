@@ -141,6 +141,17 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
               Asset Store
             </Link>
           )}
+          {project.patreon && (
+            <Link
+              href={project.patreon}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 bg-golden hover:bg-[#FFD700] text-black px-3 py-1.5 h-8"
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              Patreon
+            </Link>
+          )}
           {project.demo && (
             <a
               href={project.demo}

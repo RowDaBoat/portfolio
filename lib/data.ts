@@ -12,6 +12,7 @@ export interface Project {
   github?: string
   assetStore?: string
   demo?: string
+  patreon?: string
   license?: string
 }
 
@@ -73,6 +74,16 @@ export const projectCategories: ProjectCategories = {
     },
   ],
   gamedevTools: [
+    {
+      title: "Jolly",
+      description:
+        "Unity package for creating Soulslike games, published in Patreon.\n\nJolly aims to provide most if not all of the freatures required to build soulslike games, building up on top of Enhanced Timeline.",
+      image: "/jolly.png",
+      tags: ["Unity", "C#", "Rx", "Networking", "Mirror"],
+      patreon: "https://www.patreon.com/cw/bitduc",
+      video: "https://www.youtube.com/watch?v=zhaOJyAiuZ8",
+      license: "Non Public",
+    },
     {
       title: "Enhanced Timeline",
       description:
