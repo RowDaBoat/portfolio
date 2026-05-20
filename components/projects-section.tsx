@@ -64,7 +64,7 @@ function ProjectCard({ project, showLicense = false }: { project: Project; showL
                 className={`text-xs font-mono ${
                   project.license === "Open Source, ISC"
                     ? "border-green-500/30 text-green-400"
-                    : project.license === "Not Public"
+                    : project.license === "Not Public" || project.license === "Private"
                       ? "border-red-500/30 text-red-400"
                       : "border-blue-500/30 text-blue-400"
                 }`}

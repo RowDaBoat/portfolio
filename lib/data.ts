@@ -82,7 +82,7 @@ export const projectCategories: ProjectCategories = {
       tags: ["Unity", "C#", "Rx", "Networking", "Mirror"],
       patreon: "https://www.patreon.com/cw/bitduc",
       video: "https://www.youtube.com/watch?v=zhaOJyAiuZ8",
-      license: "Non Public",
+      license: "Private",
     },
     {
       title: "Enhanced Timeline",
